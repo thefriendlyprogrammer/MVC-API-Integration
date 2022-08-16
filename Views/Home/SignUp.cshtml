@@ -1,0 +1,41 @@
+﻿@{ 
+    Layout = null;
+}
+
+@model CRUD_Assignment.Models.AdminUserModel
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+   
+    <link href="~/Content/SignUp_CSS/SignUp_p.css" rel="stylesheet" />
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    
+
+    <div class="main-w3layouts wrapper">
+        <h1> SignUp </h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="~/Home/SignUp" method="post">
+                  
+                   
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @Placeholder = "Name" })
+                    @Html.ValidationMessageFor(M => M.Name, "", new { @class = "text-danger" })
+                   
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @Placeholder = "Email" })
+                    @Html.ValidationMessageFor(M => M.Email, "", new { @class = "text-danger" })
+                   
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @Placeholder = "password" })
+                    @Html.ValidationMessageFor(M => M.Password, "", new { @class = "text-danger" })
+                 
+                    @Html.TextBoxFor(m => m.V_Code, new { @class = "form-control", @Placeholder = "code" })
+                    @Html.ValidationMessageFor(M => M.V_Code, "", new { @class = "text-danger" })
+
+                    <div class="wthree-text">
+                        <div class="clear"> </div>
+                    </div>
+                    <input type="submit" value="SIGNUP">
+                </form>
+                <p>I have an Account? <a href="~/Home/SignIn"> Login Now!</a></p>
+            </div>
+        </div>
+    </div>
